@@ -1,0 +1,14 @@
+/* styles.css */
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.bg-accent{
+    --tw-bg-opacity: 1;
+    background-color: rgb(214 214 214 / var(--tw-bg-opacity));
+}
+
+.btn-primary{
+
+}

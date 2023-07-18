@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Rapis Excelsa",
+    "price": 499.0,
+    "id": 1,
+    "imgUrl": "/plants/1.png"
+  },
+  {
+    "name": "Kentia Forestia",
+    "price": 499.0,
+    "id": 2,
+    "imgUrl": "/plants/2.png"
+  },
+  {
+    "name": "Ficus Triangularis",
+    "price": 499.0,
+    "id": 3,
+    "imgUrl": "/plants/3.png"
+  },
+  {
+    "name": "Ficas Starlight",
+    "price": 499.0,
+    "id": 4,
+    "imgUrl": "/plants/4.png"
+  },
+  {
+    "name": "Adiantum Radianum",
+    "price": 499.0,
+    "id": 5,
+    "imgUrl": "/plants/5.png"
+  },
+  {
+    "name": "Peace Lily",
+    "price": 499.0,
+    "id": 6,
+    "imgUrl": "/plants/6.png"
+  },
+  {
+    "name": "Aglaonema Marie",
+    "price": 499.0,
+    "id": 7,
+    "imgUrl": "/plants/7.png"
+  },
+  {
+    "name": "Aloe Vera",
+    "price": 499.0,
+    "id": 8,
+    "imgUrl": "/plants/8.png"
+  },
+  {
+    "name": "Golden Cypress",
+    "price": 499.0,
+    "id": 9,
+    "imgUrl": "/plants/9.png"
+  },
+  {
+    "name": "Umbrella Palm",
+    "price": 499.0,
+    "id": 10,
+    "imgUrl": "/plants/10.png"
+  },
+  {
+    "name": "Snake Plant - Green",
+    "price": 499.0,
+    "id": 11,
+    "imgUrl": "/plants/11.png"
+  },
+  {
+    "name": "Philedendron",
+    "price": 499.0,
+    "id": 12,
+    "imgUrl": "/plants/12.png"
+  },
+  {
+    "name": "Gladiator Red Rose",
+    "price": 499.0,
+    "id": 13,
+    "imgUrl": "/plants/13.png"
+  },
+  {
+    "name": "PetriaVolubils",
+    "price": 499.0,
+    "id": 14,
+    "imgUrl": "/plants/14.png"
+  },
+  {
+    "name": "Russelia",
+    "price": 499.0,
+    "id": 15,
+    "imgUrl": "/plants/15.png"
+  }
+]
