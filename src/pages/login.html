@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <script src="../../src/components/login.js" type="module" defer></script>
+    <script src="../../src/components/Layout/index.js" type="module" defer></script>
+    <link rel="stylesheet" href="../../styles/tailwind.css">
+
+</head>
+<body class="bg-accent">
+<div id="navbar"></div>
+<section class=" max-w-screen-2xl mx-auto py-16 space-y-4 px-6 md:px-0">
+    <div id="errorPopUp" class="absolute left-0 -top-24 w-full transition-all duration-300">
+        <div class="alert alert-error shadow-lg max-w-screen-sm mx-auto">
+            <div>
+                <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="stroke-current flex-shrink-0 h-6 w-6"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                >
+                    <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                </svg>
+                <span>Error! Incorrect Credentials.</span>
+            </div>
+        </div>
+    </div>
+    <h1 class="text-4xl text-center text-primary capitalize">
+        Already register ?
+    </h1>
+    <main class="flex flex-col md:flex-row justify-center items-stretch gap-12">
+        <div class="border-primary p-5 border md:w-[600px] bg-secondary">
+            <h2 class="text-2xl uppercase">REGISTER</h2>
+            <h3 class="font-medium mt-4">
+                By creating an account with our store, you will be able to move
+                through the checkout process faster, store multiple shipping
+                addresses, view and track your orders in your account and more.
+            </h3>
+            <div class="mt-8">
+                <a class="" href="/src/pages/register.html">
+                    <button class="btn btn-primary bg-primary w-44 hover:bg-primary/80 border-primary hover:border-primary">
+                        CREATE AN ACCOUNT
+                    </button>
+                </a>
+            </div>
+        </div>
+        <div class="border-primary p-5 border md:w-[600px] bg-secondary">
+            <h2 class="text-2xl uppercase">LOGIN</h2>
+            <h3 class="font-medium mt-4">
+                If you have an account with us, please login here:
+            </h3>
+            <form id="login-form" class="w-full">
+                <div class="form-control w-full">
+                    <label class="label" for="login-email">
+                <span class="label-text font-bold text-black/60">
+                  E-MAIL
+                </span>
+                    </label>
+                    <input
+                            id="login-email"
+                            name="email"
+                            type="text"
+                            placeholder="Type here"
+                            class="input input-bordered w-full"
+                            required
+                    />
+                </div>
+                <div class="form-control w-full">
+                    <label class="label" for="login-password">
+                <span class="label-text font-bold text-black/60">
+                  PASSWORD
+                </span>
+                    </label>
+                    <input
+                            id="login-password"
+                            name="password"
+                            type="password"
+                            placeholder="Type here"
+                            class="input input-bordered w-full"
+                            required
+                    />
+                </div>
+
+                <div class="mt-4 flex justify-between">
+                    <input value="login" type="submit"
+                           class="btn btn-primary bg-primary hover:bg-primary/80 border-primary hover:border-primary">
+
+                </div>
+            </form>
+            <div class="text-end link link-hover">Forgot Password ?</div>
+        </div>
+    </main>
+</section>
+
+<div id="footer"></div>
+</body>
+</html>

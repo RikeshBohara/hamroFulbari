@@ -2,9 +2,94 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Register</title>
+    <script src="../../src/components/register.js" type="module" defer></script>
+    <script src="../../src/components/Layout/index.js" type="module" defer></script>
+    <link rel="stylesheet" href="../../styles/tailwind.css">
 </head>
-<body>
-
+<body class="bg-accent">
+<div id="navbar"></div>
+<section class="max-w-screen-2xl md:mx-auto py-10 space-y-4 px-6 md:px-0">
+    <h1 class="text-4xl text-center text-primary capitalize">
+        Create an Account
+    </h1>
+    <div class="border-primary p-5 border mx-auto md:w-[600px] bg-secondary">
+        <h2 class="text-2xl uppercase">Personal Information</h2>
+        <form id="register-form" class="w-full">
+            <div class="form-control w-full">
+                <label class="label" for="register-firstName">
+              <span class="label-text font-bold text-black/60">
+                FIRST NAME
+              </span>
+                </label>
+                <input
+                        id="register-firstName"
+                        required
+                        type="text"
+                        name="firstName"
+                        placeholder="Type here"
+                        class="input input-bordered w-full"
+                />
+            </div>
+            <div class="form-control w-full">
+                <label class="label" for="register-lastName">
+              <span class="label-text font-bold text-black/60">
+                LAST NAME
+              </span>
+                </label>
+                <input
+                        id="register-lastName"
+                        required
+                        type="text"
+                        name="lastName"
+                        placeholder="Type here"
+                        class="input input-bordered w-full"
+                />
+            </div>
+            <div class="form-control w-full">
+                <label class="label" for="register-email">
+                    <span class="label-text font-bold text-black/60">E-MAIL</span>
+                </label>
+                <input
+                        required
+                        id="register-email"
+                        type="email"
+                        name="email"
+                        placeholder="Type here"
+                        class="input input-bordered w-full"
+                />
+            </div>
+            <div class="form-control w-full">
+                <label class="label" for="register-password">
+              <span class="label-text font-bold text-black/60">
+                PASSWORD
+              </span>
+                </label>
+                <input
+                        required
+                        id="register-password"
+                        type="password"
+                        name="password"
+                        placeholder="Type here"
+                        class="input input-bordered w-full"
+                />
+            </div>
+            <div class="mt-4 flex justify-between">
+                <button
+                        type="submit"
+                        class="btn btn-primary bg-primary hover:bg-primary/80 border-primary hover:border-primary"
+                >
+                    Create
+                </button>
+                <a href="/">
+                    <button class="btn btn-primary bg-primary hover:bg-primary/80 border-primary hover:border-primary">
+                        Return
+                    </button>
+                </a>
+            </div>
+        </form>
+    </div>
+</section>
+<div id="footer"></div>
 </body>
 </html>

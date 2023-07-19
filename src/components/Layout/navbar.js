@@ -211,7 +211,7 @@ function navbar() {
 
     const profileContainer = document.querySelector("#navbar-profile-container")
 
-    if (Object.keys(activeUser).length > 0) {
+    if (activeUser && Object.keys(activeUser)?.length > 0) {
         profileContainer.innerHTML = `
                 <ul
                     tabIndex={0}

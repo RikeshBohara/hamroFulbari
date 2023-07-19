@@ -21,7 +21,7 @@ const renderPlant = (plant) => {
     const image = document.createElement('img');
     image.className = "h-44 border-primary"
     image.src = `/public${plant.imgUrl}`;
-    image.alt = "Shoes";
+    image.alt = "Plant";
 
     figure.appendChild(image);
     plantItemContainer.appendChild(figure);
@@ -46,13 +46,9 @@ const renderPlant = (plant) => {
 }
 
 const renderPlants = (plantsData) => {
-    const plantsContainer = document.querySelector("#plants-container");
+    const plantsContainer = document.querySelector("#plants-container-products");
 
     for (const plant of plantsData) {
-        if(plantsData.indexOf(plant) === 5){
-            break;
-        }
-
         const plantItem = renderPlant(plant);
         plantsContainer.appendChild(plantItem);
     }
@@ -64,7 +60,7 @@ const renderActions = (plant) => {
 
     if (isLoggedIn) {
         const button = document.createElement("button");
-        button.addEventListener("click",() => handleAdd(plant))
+        button.addEventListener("click", () => handleAdd(plant))
         button.className = "btn btn-primary w-40 bg-primary border-primary hover:bg-primary/80 hover:border-primary/80";
         button.innerHTML = "Add to Cart";
 

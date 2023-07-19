@@ -55,10 +55,28 @@ export const updateCartAmount = () => {
         console.log(error);
     }
     const styleTag = document.querySelector("#cart-update-style");
-    if (cartTotalContents === 0) {
-        styleTag.innerHTML = "";
-    } else {
-        styleTag.innerHTML =
-            "#cart-content::after{" + "content:'" + cartTotalContents + "'}";
+    if (styleTag) {
+        if (cartTotalContents === 0) {
+            styleTag.innerHTML = "";
+        } else {
+            styleTag.innerHTML =
+                "#cart-content::after{" + "content:'" + cartTotalContents + "'}";
+        }
     }
+}
+
+export const addDefaultDbDatas = () => {
+    if (!JSON.parse(window.localStorage.getItem("userCredentials"))) {
+        window.localStorage.setItem("userCredentials", JSON.stringify([]));
+    }
+    if (!JSON.parse(window.localStorage.getItem("activeUser"))) {
+        window.localStorage.setItem("activeUser", JSON.stringify({}));
+    }
+    if (!JSON.parse(window.localStorage.getItem("purchaseDb"))) {
+        window.localStorage.setItem("purchaseDb", JSON.stringify({}));
+    }
+    if (!JSON.parse(window.localStorage.getItem("isLoggedIn"))) {
+        window.localStorage.setItem("isLoggedIn", JSON.stringify(false));
+    }
+    updateCartAmount();
 }
