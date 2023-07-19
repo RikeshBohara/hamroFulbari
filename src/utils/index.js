@@ -80,3 +80,48 @@ export const addDefaultDbDatas = () => {
     }
     updateCartAmount();
 }
+
+export const checkLoggedIn = () => {
+    return JSON.parse(window.localStorage.getItem("isLoggedIn"));
+}
+
+export const handleAdd = (data) => {
+    addToCart(data);
+    alert("Successfully Added Element.");
+}
+
+export const getCartData = () => {
+    const allData = JSON.parse(window.localStorage.getItem("purchaseDb"));
+    const activeUser = JSON.parse(window.localStorage.getItem("activeUser"));
+    return allData[activeUser.firstName.toLocaleLowerCase()];
+}
+
+export const getTotalAmount = () => {
+    const allData = JSON.parse(window.localStorage.getItem("purchaseDb"));
+    const activeUser = JSON.parse(window.localStorage.getItem("activeUser"));
+    let total = 0;
+    try {
+        for (let data of allData[activeUser.firstName.toLocaleLowerCase()]) {
+            total += data.quantity * data.price;
+        }
+    } catch (error) {
+        console.log(error);
+    }
+    return total;
+}
+
+export const removeCartItem = (item) => {
+    let allData = JSON.parse(window.localStorage.getItem("purchaseDb"));
+    const activeUser = JSON.parse(window.localStorage.getItem("activeUser"));
+    const updatedData = allData[activeUser.firstName.toLocaleLowerCase()].filter(
+        (data) => {
+            return data.id !== item.id;
+        }
+    );
+    allData = {
+        ...allData,
+        [activeUser.firstName.toLocaleLowerCase()]: updatedData,
+    };
+    window.localStorage.setItem("purchaseDb", JSON.stringify(allData));
+    updateCartAmount();
+}

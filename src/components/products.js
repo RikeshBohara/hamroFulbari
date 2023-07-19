@@ -1,4 +1,4 @@
-import {addToCart} from "../utils.js";
+import {addToCart, checkLoggedIn} from "../utils/index.js";
 
 let isLoggedIn = false;
 fetch("/public/data.json")
@@ -7,10 +7,6 @@ fetch("/public/data.json")
         isLoggedIn = checkLoggedIn();
         renderPlants(data);
     })
-
-const checkLoggedIn = () => {
-    return window.localStorage.getItem("isLoggedIn")
-}
 
 const renderPlant = (plant) => {
     const plantItemContainer = document.createElement("div");
@@ -36,7 +32,7 @@ const renderPlant = (plant) => {
     cardBody.appendChild(cardTitle);
 
     const price = document.createElement("p");
-    price.innerHTML = plant.price;
+    price.innerHTML = `Rs. ${plant.price}`;
     cardBody.appendChild(price);
 
     const cardActions = renderActions(plant)
@@ -68,7 +64,7 @@ const renderActions = (plant) => {
     }
 
     const details = document.createElement('a');
-    details.setAttribute("href", `/details?id=${plant.id}`);
+    details.setAttribute("href", `/src/pages/details?id=${plant.id}`);
     details.className = "btn w-40";
     details.innerText = "View Details";
 

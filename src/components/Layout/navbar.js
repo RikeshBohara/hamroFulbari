@@ -152,7 +152,7 @@ function navbar() {
 
               <a
                 id="cart-content"
-                href="/cart"
+                href="/src/pages/cart.html"
                 class="after:absolute relative after:bg-red-500 after:rounded-full after:px-1 after:-top-2 after:-right-2"
               >
                 <svg
@@ -190,13 +190,13 @@ function navbar() {
         </nav>
       </section>
       <section class="bg-accent hidden md:flex">
-        <nav class="max-w-screen-2xl mx-auto mt-4">
+        <nav class="max-w-screen-2xl mx-auto my-4">
           <ul class="flex justify-center items-center gap-6 py-2 text-2xl text-black/90 font-medium">
             <li class="hover:text-primary transition-all duration-300">
               <a href="/">Home</a>
             </li>
             <li class="hover:text-primary transition-all duration-300">
-              <a href="/products">Products</a>
+              <a href="/src/pages/products.html">Products</a>
             </li>
             <li class="hover:text-primary transition-all duration-300">
               <a href="/#about-us">About Us</a>

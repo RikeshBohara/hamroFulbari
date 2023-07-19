@@ -1,4 +1,4 @@
-import {addDefaultDbDatas} from "../utils.js";
+import {addDefaultDbDatas} from "../utils/index.js";
 
 const registerForm = document.querySelector("#register-form");
 const firstName = document.querySelector("#register-firstName");
