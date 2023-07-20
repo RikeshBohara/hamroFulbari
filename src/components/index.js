@@ -9,7 +9,6 @@ fetch("/public/data.json")
     })
 
 
-
 const renderPlant = (plant) => {
     const plantItemContainer = document.createElement("div");
     plantItemContainer.setAttribute("key", plant.id);
@@ -47,7 +46,7 @@ const renderPlants = (plantsData) => {
     const plantsContainer = document.querySelector("#plants-container");
 
     for (const plant of plantsData) {
-        if(plantsData.indexOf(plant) === 5){
+        if (plantsData.indexOf(plant) === 5) {
             break;
         }
 
@@ -62,7 +61,7 @@ const renderActions = (plant) => {
 
     if (isLoggedIn) {
         const button = document.createElement("button");
-        button.addEventListener("click",() => handleAdd(plant))
+        button.addEventListener("click", () => handleAdd(plant))
         button.className = "btn btn-primary w-40 bg-primary border-primary hover:bg-primary/80 hover:border-primary/80";
         button.innerHTML = "Add to Cart";
 
@@ -78,3 +77,30 @@ const renderActions = (plant) => {
 
     return cardActions;
 }
+
+const swiperContent = document.querySelector("#swiper-content");
+const leftSwipe = document.querySelector("#swiper-button-prev");
+const rightSwipe = document.querySelector("#swiper-button-next");
+let transformPosition = 0;
+rightSwipe.addEventListener("click", () => {
+    if (transformPosition === 0) {
+        transformPosition += 450;
+        swiperContent.style.transform = `translateX(-${transformPosition}px)`;
+        rightSwipe.classList.remove("cursor-pointer");
+        rightSwipe.classList.add("cursor-not-allowed");
+        leftSwipe.classList.remove("cursor-not-allowed");
+        leftSwipe.classList.add("cursor-pointer");
+    }
+})
+leftSwipe.addEventListener("click", () => {
+    if (transformPosition === 450) {
+        transformPosition -= 450;
+        swiperContent.style.transform = `translateX(-${transformPosition}px)`;
+        leftSwipe.classList.remove("cursor-pointer");
+        leftSwipe.classList.add("cursor-not-allowed");
+        rightSwipe.classList.remove("cursor-not-allowed");
+        rightSwipe.classList.add("cursor-pointer");
+    }
+})
+
+
