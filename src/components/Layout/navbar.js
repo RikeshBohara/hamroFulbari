@@ -1,11 +1,14 @@
 //generic navbar
-function navbar() {
+import {updateCartAmount} from "../../utils/index.js";
 
+function navbar() {
     //logging out
     const handleLogout = () => {
         console.log('handleLogout')
         window.localStorage.setItem("activeUser", JSON.stringify({}));
         window.localStorage.setItem("isLoggedIn", 'false');
+        alert("You have logged out successfully.")
+        window.open("/src/pages/login.html","_self");
         activeUser = {};
     }
 
@@ -124,42 +127,42 @@ function navbar() {
                 <div id="navbar-profile-container">
                 </div>
               </div>
-
-              <a
-                id="cart-content"
-                href="/src/pages/cart.html"
+                  <a
+                    id="cart-content"
+                    href="/src/pages/cart.html"
                 class="after:absolute relative after:bg-red-500 after:rounded-full after:px-1 after:-top-2 after:-right-2"
-              >
-                <svg
-                  width="36"
-                  height="34"
-                  viewBox="0 0 36 34"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M13.5 33C14.3284 33 15 32.3284 15 31.5C15 30.6716 14.3284 30 13.5 30C12.6716 30 12 30.6716 12 31.5C12 32.3284 12.6716 33 13.5 33Z"
-                    stroke="white"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M30 33C30.8284 33 31.5 32.3284 31.5 31.5C31.5 30.6716 30.8284 30 30 30C29.1716 30 28.5 30.6716 28.5 31.5C28.5 32.3284 29.1716 33 30 33Z"
-                    stroke="white"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M1.5 1.5H7.5L11.52 21.585C11.6572 22.2756 12.0329 22.8959 12.5813 23.3374C13.1298 23.779 13.816 24.0135 14.52 24H29.1C29.804 24.0135 30.4902 23.779 31.0387 23.3374C31.5871 22.8959 31.9628 22.2756 32.1 21.585L34.5 9H9"
-                    stroke="white"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </a>
+                   
+                  >
+                    <svg
+                      width="36"
+                      height="34"
+                      viewBox="0 0 36 34"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M13.5 33C14.3284 33 15 32.3284 15 31.5C15 30.6716 14.3284 30 13.5 30C12.6716 30 12 30.6716 12 31.5C12 32.3284 12.6716 33 13.5 33Z"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M30 33C30.8284 33 31.5 32.3284 31.5 31.5C31.5 30.6716 30.8284 30 30 30C29.1716 30 28.5 30.6716 28.5 31.5C28.5 32.3284 29.1716 33 30 33Z"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M1.5 1.5H7.5L11.52 21.585C11.6572 22.2756 12.0329 22.8959 12.5813 23.3374C13.1298 23.779 13.816 24.0135 14.52 24H29.1C29.804 24.0135 30.4902 23.779 31.0387 23.3374C31.5871 22.8959 31.9628 22.2756 32.1 21.585L34.5 9H9"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </a>
             </div>
           </main>
         </nav>
@@ -180,11 +183,12 @@ function navbar() {
               <a href="/#contact-us">Contact Us</a>
             </li>
           </ul>
-        </nav>
-        <style id="cart-update-style"></style>
-        
+        </nav>        
       </section>
+              <style id="cart-update-style"></style>
+
     `
+    updateCartAmount();
 
     const profileContainer = document.querySelector("#navbar-profile-container")
 
@@ -192,10 +196,10 @@ function navbar() {
         console.log("testing inside active user");
         profileContainer.innerHTML = `
                 
-                    <div id="navbar-logout">
-                      <a class="text-red-500 active:bg-red-500 active:text-white">
-                        Log Out
-                      </a>
+                    <div id="navbar-logout" >
+<svg width="40" height="40" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11 16L7 12M7 12L11 8M7 12L21 12M16 16V17C16 18.6569 14.6569 20 13 20H6C4.34315 20 3 18.6569 3 17V7C3 5.34315 4.34315 4 6 4H13C14.6569 4 16 5.34315 16 7V8" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
                       </div>
         `
 
