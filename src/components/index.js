@@ -82,24 +82,40 @@ const swiperContent = document.querySelector("#swiper-content");
 const leftSwipe = document.querySelector("#swiper-button-prev");
 const rightSwipe = document.querySelector("#swiper-button-next");
 let transformPosition = 0;
+
 rightSwipe.addEventListener("click", () => {
-    if (transformPosition === 0) {
-        transformPosition += 450;
-        swiperContent.style.transform = `translateX(-${transformPosition}px)`;
-        rightSwipe.classList.remove("cursor-pointer");
-        rightSwipe.classList.add("cursor-not-allowed");
-        leftSwipe.classList.remove("cursor-not-allowed");
-        leftSwipe.classList.add("cursor-pointer");
+    console.log("screen",screen.width);
+    if(screen.width >= 768) {
+        if (transformPosition === 0) {
+            transformPosition += 450;
+            swiperContent.style.transform = `translateX(-${transformPosition}px)`;
+            rightSwipe.classList.remove("cursor-pointer");
+            rightSwipe.classList.add("cursor-not-allowed");
+            leftSwipe.classList.remove("cursor-not-allowed");
+            leftSwipe.classList.add("cursor-pointer");
+        }
+    }else{
+        if(transformPosition < 250) {
+            transformPosition += 152;
+            swiperContent.style.transform = `translateX(-${transformPosition}px)`;
+        }
     }
 })
 leftSwipe.addEventListener("click", () => {
-    if (transformPosition === 450) {
-        transformPosition -= 450;
-        swiperContent.style.transform = `translateX(-${transformPosition}px)`;
-        leftSwipe.classList.remove("cursor-pointer");
-        leftSwipe.classList.add("cursor-not-allowed");
-        rightSwipe.classList.remove("cursor-not-allowed");
-        rightSwipe.classList.add("cursor-pointer");
+    if(screen.width >= 768) {
+        if (transformPosition === 450) {
+            transformPosition -= 450;
+            swiperContent.style.transform = `translateX(-${transformPosition}px)`;
+            leftSwipe.classList.remove("cursor-pointer");
+            leftSwipe.classList.add("cursor-not-allowed");
+            rightSwipe.classList.remove("cursor-not-allowed");
+            rightSwipe.classList.add("cursor-pointer");
+        }
+    }else{
+        if(transformPosition > 0) {
+            transformPosition -= 152;
+            swiperContent.style.transform = `translateX(-${transformPosition}px)`;
+        }
     }
 })
 

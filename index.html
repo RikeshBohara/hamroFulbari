@@ -8,9 +8,9 @@
     <script src="./src/components/Layout/index.js" type="module" defer></script>
     <script src="./src/components/index.js" type="module" defer></script>
 </head>
-<body>
+<body class="bg-accent">
 <div id="navbar"></div>
-<main class="bg-accent">
+<main>
     <section>
         <div class="max-w-screen-2xl mx-auto h-[530px] mb-6 relative">
             <img
@@ -393,11 +393,10 @@
                     <path d="M15 19L8 12L15 5" stroke="#111827" stroke-width="2" stroke-linecap="round"
                           stroke-linejoin="round"/>
                 </svg>
-
             </div>
-            <div id="swiper-content-wrapper" class="overflow-hidden flex justify-center w-5/6">
-                <div id="swiper-content" style="transition: transform 1s ease" class="flex">
-                    <div class="max-w-xl flex flex-col items-center select-none my-14 mx-9 gap-4 w-96">
+            <div id="swiper-content-wrapper" class="overflow-hidden flex justify-center w-11/12 md:w-5/6">
+                <div id="swiper-content" style="transition: transform 1s ease" class="flex left-16 relative md:left-0">
+                    <div class="max-w-xl flex flex-col items-center select-none my-14 mx-9 gap-4 w-20 md:w-96">
                         <img
                                 src="/public/review/reviewer1.png"
                                 class="aspect-square w-64 rounded-full object-center"
@@ -495,7 +494,7 @@
                         </div>
                     </div>
 
-                    <div class="max-w-xl flex flex-col items-center select-none my-14 mx-9 gap-4 w-96">
+                    <div class="max-w-xl flex flex-col items-center select-none my-14 mx-9 gap-4 w-20 md:w-96">
                         <img
                                 src="/public/review/reviewer1.png"
                                 class="aspect-square w-64 rounded-full object-center"
@@ -593,7 +592,7 @@
                         </div>
                     </div>
 
-                    <div class="max-w-xl flex flex-col items-center select-none my-14 mx-9 gap-4 w-96">
+                    <div class="max-w-xl flex flex-col items-center select-none my-14 mx-9 gap-4 w-20 md:w-96">
                         <img
                                 src="/public/review/reviewer1.png"
                                 class="aspect-square w-64 rounded-full object-center"
@@ -691,7 +690,7 @@
                         </div>
                     </div>
 
-                    <div class="max-w-xl flex flex-col items-center select-none my-14 mx-9 gap-4 w-96">
+                    <div class="max-w-xl flex flex-col items-center select-none my-14 mx-9 gap-4 w-20 md:w-96">
                         <img
                                 src="/public/review/reviewer1.png"
                                 class="aspect-square w-64 rounded-full object-center"
@@ -789,7 +788,7 @@
                         </div>
                     </div>
 
-                    <div class="max-w-xl flex flex-col items-center select-none my-14 mx-9 gap-4 w-96">
+                    <div class="max-w-xl flex flex-col items-center select-none my-14 mx-9 gap-4 w-20 md:w-96">
                         <img
                                 src="/public/review/reviewer1.png"
                                 class="aspect-square w-64 rounded-full object-center"
@@ -910,5 +909,7 @@
     </section>
 </main>
 <div id="footer"></div>
+<div id="sidebar">
+</div>
 </body>
 </html>

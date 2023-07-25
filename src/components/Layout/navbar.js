@@ -71,9 +71,10 @@ function navbar() {
             </div>
           </div>
           <main class="flex justify-between items-center">
-            <a href="/" class="flex items-center">
+          <div class="flex items-center">
               <label
-                htmlFor="my-drawer-3"
+              id="hamburger-icon"
+                for="my-drawer-3"
                 class="btn flex md:hidden btn-square btn-ghost"
               >
                 <svg
@@ -90,11 +91,14 @@ function navbar() {
                   ></path>
                 </svg>
               </label>
+            <a href="/" >
               <div class="capitalize py-2 text-black font-bold">
                 Hamro <br />
                 Fulbari
               </div>
             </a>
+          
+</div>
             <div class="form-control hidden md:flex">
               <div class="input-group">
                 <input
@@ -190,6 +194,14 @@ function navbar() {
     `
     updateCartAmount();
 
+    const hamburgerIcon = document.querySelector("#hamburger-icon");
+    const sidebar = document.querySelector("#sidebar");
+    hamburgerIcon.addEventListener('click',()=>{
+        sidebar.classList.toggle('translate-x-0');
+        sidebar.classList.toggle('translate-x-14');
+        sidebar.classList.remove('hidden')
+
+    })
     const profileContainer = document.querySelector("#navbar-profile-container")
 
     if (activeUser && Object.keys(activeUser)?.length > 0) {
